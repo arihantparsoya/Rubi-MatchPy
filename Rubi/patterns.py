@@ -23,7 +23,7 @@ pattern2 = Pattern(Int(Pow(x_, m_), x), FreeQ((m,), x), NonzeroQ(Add(m_, one), (
 rule2 = ReplacementRule(pattern2, lambda m, x: Mul(Pow(x, Add(m, one)), Pow(Add(m, one), m_one)))
 
 rubi = ManyToOneReplacer(rule1)
-rubi.add(*rule2)
+rubi.add(rule2)
 
 test = [
     [Int(Pow(x, one), x), Mul(Pow(Add(one, one), m_one), Pow(x, Add(one, one)))],
